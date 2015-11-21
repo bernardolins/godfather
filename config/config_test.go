@@ -17,7 +17,7 @@ func TestGetGodfatherPath(t *testing.T) {
 
 func TestGetGodfatherPathNotSet(t *testing.T) {
 	os.Unsetenv("GODFATHER_PATH")
-	expect := ""
+	expect := os.Getenv("PWD")
 	got := GetGodfatherPath()
 
 	if expect != got {
