@@ -20,7 +20,7 @@ func Find() {
 
 func visit(path string, f os.FileInfo, err error) error {
 	if !f.IsDir() && isGodfatherFile(f.Name()) {
-		fmt.Println(path)
+		BuildTask(f.Name())
 	}
 	return nil
 }
