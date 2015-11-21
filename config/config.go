@@ -10,7 +10,7 @@ func GetGodfatherPath() string {
 
 	if len(path) == 0 {
 		fmt.Println("$GODFATHER_PATH is not set")
-		os.Exit(1)
+		return ""
 	}
 
 	return path
