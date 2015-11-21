@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/bernardolins/godfather/config"
+	"github.com/bernardolins/godfather/yaml"
 )
 
 func main() {
-	config.GetGodfatherPath()
+	yaml.Find()
 }
