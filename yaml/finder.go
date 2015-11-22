@@ -21,7 +21,7 @@ func Find() {
 
 func visit(path string, f os.FileInfo, err error) error {
 	if !f.IsDir() && isGodfatherFile(f.Name()) {
-		BuildTask(f.Name())
+		BuildTask(path)
 	}
 	return nil
 }
