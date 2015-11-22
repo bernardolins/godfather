@@ -5,13 +5,17 @@ import (
 	"strings"
 )
 
-func Validate(task Task) {
-
+func Validate(task Task) bool {
+	return validateMetadata(task.Metadata)
 }
 
 func validateMetadata(m Metadata) bool {
 	if len(m.Name) == 0 {
-		fmt.Println("Field Name is required")
+		fmt.Println("Error: Field Name is required")
+		return false
+	}
+
+	if !isValidName(m.Name) {
 		return false
 	}
 
@@ -23,7 +27,7 @@ func isValidName(name string) bool {
 
 	for _, invalidChar := range invalidCharacters {
 		if strings.Contains(name, invalidChar) {
-			fmt.Println("Name should not contain %q", invalidChar)
+			fmt.Println("Error: Name should not contain", invalidChar)
 			return false
 		}
 	}
