@@ -6,14 +6,14 @@ import (
 	"io/ioutil"
 )
 
-func BuildTask(path string) task.T {
+func BuildTask(path string) task.Task {
 	f, err := ioutil.ReadFile(path)
 
 	if err != nil {
 		panic(err)
 	}
 
-	var task task.T
+	var task task.Task
 	err = yaml.Unmarshal(f, &task)
 
 	if err != nil {
