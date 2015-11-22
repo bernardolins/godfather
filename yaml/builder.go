@@ -4,7 +4,6 @@ import (
 	"github.com/bernardolins/godfather/task"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
-	"log"
 )
 
 func BuildTask(path string) task.T {
@@ -18,7 +17,7 @@ func BuildTask(path string) task.T {
 	err = yaml.Unmarshal(f, &task)
 
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	return task

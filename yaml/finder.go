@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/bernardolins/godfather/config"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 )
@@ -34,7 +35,7 @@ func isGodfatherFile(filename string) bool {
 }
 
 func isYaml(filename string) bool {
-	if strings.Contains(filename, ".yml") || strings.Contains(filename, ".yaml") {
+	if path.Ext(filename) == ".yml" || path.Ext(filename) == ".yaml" {
 		return true
 	}
 
