@@ -25,3 +25,6 @@ _testmain.go
 godfather
 *.swp
 *.swo
+
+.godfather.yaml
+.godfather.yml
