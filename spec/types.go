@@ -5,7 +5,9 @@ import ()
 type Task struct {
 	Metadata Metadata          `yaml: "metadata"`
 	Env      map[string]string `yaml: "env,omitempty"`
+	Before   Command           `yaml: "before"`
 	Command  Command           `yaml: "command"`
+	After    Command           `yaml: "after"`
 }
 
 type Metadata struct {
