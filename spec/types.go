@@ -19,5 +19,5 @@ type Metadata struct {
 
 type Command struct {
 	Exec      string   `yaml: "exec"`
-	Arguments []string `yaml: "arguments"`
+	Arguments []string `yaml: "arguments,omitempty"`
 }
