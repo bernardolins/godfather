@@ -2,22 +2,22 @@ package yaml
 
 import (
 	"fmt"
-	"github.com/bernardolins/godfather/task"
+	"github.com/bernardolins/godfather/spec"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 )
 
-func BuildTask(path string) task.Task {
+func BuildTask(path string) spec.Task {
 	f, err := ioutil.ReadFile(path)
 
 	if err != nil {
 		panic(err)
 	}
 
-	var t task.Task
+	var t spec.Task
 	err = yaml.Unmarshal(f, &t)
 
-	if !task.Validate(t) {
+	if !spec.Validate(t) {
 		fmt.Println("An error occurred when creating task at", path)
 	}
 
